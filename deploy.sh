@@ -10,3 +10,7 @@ do
 done
 
 # do something with dev portal
+./apigee-dev-portal/start.sh
+
+# check everything is up
+curl localhost:8080 -L | grep "Apigee Developer Portal"
