@@ -1,0 +1,11 @@
+{
+    "features": {
+        "discovery": true,
+        "registration": {
+            "initialAccessToken": true
+        }
+    },
+    "format": {
+        "default": "opaque"
+    }
+}

@@ -1,0 +1,7 @@
+<h1>Consent</h1>
+<form autocomplete="off" action="/interaction/<%= details.uuid %>/consent" method="post">
+  <input type="hidden" name="uuid" value="<%= details.uuid %>"/>
+  <label>Do you consent to sharing account data for <strong>31926819</strong>?</label>
+  <input type="checkbox" name="consent" value="yes">
+  <button type="submit" class="login login-submit">Submit</button>
+</form>

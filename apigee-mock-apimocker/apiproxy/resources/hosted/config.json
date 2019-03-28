@@ -1,0 +1,15 @@
+{
+  "mockDirectory": "./mock",
+  "logRequestHeaders": false,
+  "webServices": {
+    "something": {
+      "verbs": ["get"],
+      "responses": {
+        "get": {
+          "httpStatus": 200,
+          "mockFile": "something.json"
+        }
+      }
+    }
+  }
+}
