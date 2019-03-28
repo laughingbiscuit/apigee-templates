@@ -1,19 +1,16 @@
-language: node_js
-node_js:
-  - "node"
-before_script:
-  - npm install --prefix apigee-mock-apimocker
-  - npm install --prefix apigee-mock-oidc
-  - npm install --prefix apigee-mock-swagger
-  - npm install --prefix apigee-node-v1
-  - npm install --prefix apigee-proxy
-  - npm install --prefix apigee-proxy-java
-# deploy
-  - npm install --prefix apigee-mock-apimocker
-  - npm install --prefix apigee-mock-oidc
-  - npm install --prefix apigee-mock-swagger
-  - npm install --prefix apigee-node-v1
-  - npm install --prefix apigee-proxy
-  - npm install --prefix apigee-proxy-java
+language: java
+services:
+  - docker
+jdk:
+  - oraclejdk8
+before_install:
+  - nvm install node
 script:
-  - 
+  - ./ci.sh
+env:
+  global:
+  - secure: eTU/0eoPzIUI8gF9+OY94YgJTxqldm5c9VvGZvInxkCiQGxc+7KlJ4amdRF550FcAAFxgeRHbi5aNtaxAC07utteS3Zi8YCWul1hOKvhRjQ5fwAE1cUI9Faa/j02j06p5+SDI6NxvAHHflbetoNxCEkQvyQM5TUWtIR6h4iOwfVhdQXXqZ7POGOHvhGcw6g+vmTfE5fy5zv8ksUuJ9u7lQod9dYsDZdVRcu/uGoBc+RJhLr9I6xh+pOP3d5gaLOl1WL7d+BB5b3qltwha/khyQ+zyETILknlmW2B/2RhzcxZpqec8gm8hG8WHBI+9J8Tsv8iaZ85fxXMKs8BLLKoAU+gEF+hKkpYcui5+Z9oYmxge3adMYlX4KAfabTMeDAvRrXgYlssF3ou8lqZ0M2jV6/j+RX0r+kApnM808F7dznE7YGkWLrRIt/9h5rPNX664LusSHgcgqGkN25lRmhdB+nUdf3C5SMyD7x3ppaxpcFcRwBhd70eCURB4Vw/okEi35UHBMvTvaV8iXKV8JUNeXqLw9pZcOtE2NzPe2d1JAq5esOMMWZsTVCH6C1UYhmMRt51TMDdpbD3Qt/2AjmQF+GO8yBNPVFwhzaLz56WBRdcVb4MgUxt4cz7Q/52R47ec39yAj96InZxBCH8oCtBj4c9D11XFuVhodKaF+xzFS4=
+  - secure: s0+TvqTcbBZfkIZAar13AG0zktOntNkvJDXu+wqCvaSLzllgfvtuZ34r6YTuBRNAD/gYro5D0aBcB7xrevHTgPppi/9uBANrpgt8UqjGzJG/byB2Hkdtrkep/vXzKuvepSdzGBQo2O86TJAzCd3Ifg+Ql2KVI9fU3kEWGbY9AnxMHuOFtTmdG3oPvWJNl+cgCITu9su1WP3CwuLrcN1wkM/rlMjMCbBfmCqMqu71HXQkPkcHaqT/EG1tf5vPcYz+I0mkhG0VmWFP9sa30s8dh+FfhgCkyXDaGYDdKWtcL/ESu0Dz5/OWcOrNItcmPof3l/TmoM8vdA+sNmyEo1RHHkjxSNqkT52v+c/+L/ykMlgRQ4HCLM7G3kKoU+bUakmsKyK9u5eb45j6s71Ar9SQQKMzx3phmfYH2VENVxfimBiVbg37UjZeaBgdsvPQN+vTDmiDLQ6CRJT2SQVrR9sLtvPEwG9yJho8CRlR+vTqoWXVCTXfz/PmRjPRkD6A2/lyM7E94Zy5Edoj6rkyFL0nmtB0fQlnqYc9F3ZUIHL8JKPP2vsSSC9ikU/Faz7nNzmrHHdI6V00g79oCxIGRR41gWmSrIuWTkPYcuW6fMueUG+FHdN2NaGTprJs3EsLqDcn/60TwsrAF/ZbbpeDvq82+q4mYie1XD0SuysQsCYquTI=
+  - secure: gWIgV/7vu1Xi/gZkocBzNt1zXF0Tsf7GiFFjYiS0c9YclW8pGZx1zLcIghwlmglUhIYcMTN7dNTHF2wwAtl9xKJ94zFe6fHw5Ym/P+vMRwWLbwT8FXkxv+anQ4nPBMWR728lF4Ar5rg5valDeXY9TKWPMwDnTb89xKHHIFoKB1rmJb1oZPTIPha+Zlm1H5q4Eu3wb/dYwgZaOvyEyxWa2FbxdgFtAfj2mpVVGulYiRVjo8PnGGTI/IvWLFO4iEhv+QO9jZu5N/IowI8bomDyFhBFSFUsH38xjN1DCPPmaJvVkK83xDvTU8OJWiPfhDnin+DNhCHRL+KCb22YWSDVId+6+t00ov/dMQR2WDOHIMagiVlSYbLTJ6SBJHQiJL6e2gydhQTnuEVD/JbEnw6LrEksLcyl6F12e92PP9Cgz82JjEyarsoPfOfakYOkq+/fpdnVUqnHE5gcnJZ6WBE19L360W626ez2b7lFP1TupkReoc5xd7QGR+/I5thoev/16yo4MAQI6iTKwlxl2suSQJ7X0FwTrEWCPWV/dWB6t88jedRxHs3hq4kvl91xc4rqZw6y381Yfx/ir+SfmQud1Q4kuzEE9IzT/Pl8dHTxuqKTvqpTvd/ysK9YiRr/D8xqWeaBMlxcm8HFlTLV+reCPYWw1dyixPmz3ncHrz3Y8vU=
+  - secure: ajgMlu23XL3h2J/QDy6XW6l+nZVAwjaPfENPDOFhe8+Lo9elrNa8PofHG+1k1P7JwyX4K4q2Kki9jMsYGyr+KnFdIP+mEYnzgHpfX6OmPssEYsRNNVnWHJL1IjybfEQwEh8K+TWnS6w6r7BcnrXFPoYC5bjinwKFGquTBiwWxwKAn//L+xFKlnV8J16HtU4SEM/bbJp0e2ZaqJOkPLYXHBOsIGq5urjnt9RvxtN4adm4tkGXP7gGIcULJNgsFdFRf7DEVIwzP8HNy5AYEGsfJGVy/WS8fjAJY7g6NBdOr9Cm7VNThqYrd8LaB18cbSCKS5H2elw/eIaL9FR5QNWQah/ZVwh5HCniSkgKztuTWaBCGXoHvQRABejo8BGBTftZMOlzzSunh9Hbq8a+eZh1hlM2kF5MmnbusHi05PUeJz2LukOtQYLxwFneq+TgOVNRaPYMeHXrnyVIN2GFe0kPbUExDwnZw6RIkNrxxUpvwdrUT2STD/Iy8flDFnHgnduZbFxnKltzDtrsdwlgqIOci51Dk8plRuYJcTbGKtvAot9F4FjqyuFvBZfcGDH/s+AcTiGvVjOvLtpOXaWwfgNN+9Mwm5sw+CdPQhhxwsuSqHO0Xpx0XC6WaIeNxQaQ6MB2GX/8hwXmYJdqPIDG3JOB36E6UYSnrB6TdPJIOBpkoU0=
+
