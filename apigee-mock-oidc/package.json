@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deploy": "echo todo",
     "start": "node app.js"
   },
   "keywords": [],
